@@ -1,0 +1,11 @@
+<!--pages/login/login.wxml-->
+<view class="username">
+  <image src="../../src/img/login/name.png"></image>
+  <input bindinput="GetUsername"/>
+</view>
+<view class="password">
+  <image src="../../src/img/login/key.png"></image>
+  <input type="password" bindinput="GetPassword"/>
+</view>
+<button type="primary" bindtap="Login">登录</button>
+<button type="primary" bindtap="ToRegister">注册</button>

@@ -22,6 +22,10 @@ App({
   },
   globalData: {
     systeminfo: {},
-    headerBtnPosi: {}
+    headerBtnPosi: {},
+    userinfo: {
+      username: "",
+      token: "",
+    },
   }
 })

@@ -1,0 +1,14 @@
+/* pages/login/login.wxss */
+view {
+  width: 50%;
+  margin: 0 25%;
+  display: flex;
+  border: solid 1px;
+  border-radius: 50rpx;
+}
+
+image {
+  margin: 5px;
+  width: 14px;
+  height: 14px;
+}

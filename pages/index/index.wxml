@@ -8,7 +8,7 @@
 </view>
 <swiper current="{{currentTab}}" bindchange="PageChange">
   <swiper-item>
-    <view>活动222</view>
+    <view>活动</view>
   </swiper-item>
   <swiper-item>
     <view>聊天</view>
