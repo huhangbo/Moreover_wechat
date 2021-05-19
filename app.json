@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/community/community",
+    "pages/mine/mine",
+    "pages/mine/my/index/index",
+    "pages/mine/my/post/post",
+    "pages/mine/my/follow/follow",
+    "pages/mine/my/followers/followers",
+    "pages/mine/service/sign/sign",
+    "pages/mine/service/collection/collection",
+    "pages/mine/service/set/set",
+    "pages/mine/service/invite/invite",
+    "pages/mine/service/feedback/feedback"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "矿且",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list":[{
+      "pagePath": "pages/index/index",
+      "text":"首页",
+      "iconPath": "src/img/indexselected.png",
+      "selectedIconPath": "src/img/index.png"
+    },{
+      "pagePath": "pages/community/community",
+      "text": "社区",
+      "iconPath": "src/img/community.png",
+      "selectedIconPath": "src/img/communityselected.png"
+    },{
+      "pagePath": "pages/mine/mine",
+      "text": "我的",
+      "iconPath": "src/img/mine.png",
+      "selectedIconPath": "src/img/mineselected.png"
+    }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

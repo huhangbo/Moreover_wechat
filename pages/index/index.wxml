@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="nav" style="padding-top:{{statusBarHeight}}px">
+  <scroll-view scroll-x="true" scroll-left="{{scroll}}" class="tab">
+    <view class="{{currentTab==0? 'cur': ''}}" data-current="0" bindtap="switchNav">活动</view>
+    <view class="{{currentTab==1? 'cur': ''}}" data-current="1" bindtap="switchNav">闲聊</view>
+    <view class="{{currentTab==2? 'cur': ''}}" data-current="2" bindtap="switchNav">答疑</view>
+  </scroll-view> 
+</view>
+<swiper current="{{currentTab}}" bindchange="PageChange">
+  <swiper-item>
+    <view>活动222</view>
+  </swiper-item>
+  <swiper-item>
+    <view>聊天</view>
+  </swiper-item>
+  <swiper-item>
+    <view>问题</view>
+  </swiper-item>
+</swiper>

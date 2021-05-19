@@ -1,0 +1,15 @@
+/**index.wxss**/
+.tab {
+  display: flex;
+  flex-direction: row;
+}
+
+.tab view {
+  margin: 0.5em 1em;
+  display: inline-block;
+}
+
+.cur {
+  color: green;
+  border-bottom: 5rpx solid green;
+}

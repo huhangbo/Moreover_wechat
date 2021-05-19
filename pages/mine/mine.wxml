@@ -1,0 +1,50 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine"  bindtap="ToMyIndex">
+  <view class="avatar">
+    <image src="../../src/test.jpg"></image>
+  </view>
+  <view class="infor">
+    <view class="name">浅航博懿</view>
+    <view class="experience">经验：500</view>
+  </view>
+  <view class="into">
+    个人主页 >
+  </view>
+  <view class="post">
+    <view class="box" bindtap="ToPost">
+      <view>2</view>
+      <view class="describe">动态</view>
+    </view>
+    <view class="box" bindtap="ToFollow">
+      <view>0</view>
+      <view class="describe">关注</view>
+    </view>
+    <view class="box" bindtap="ToFollowers">
+      <view>1</view>
+      <view class="describe">粉丝</view>
+    </view>
+  </view>
+</view>
+<view class="service">
+  <view id="servicetext">服务</view>
+  <view class="icon" bindtap="ToSign">
+    <view><image src="../../src/img/service/sign.png" mode="widthFix"></image></view>
+    <view>签到</view>
+  </view>
+  <view class="icon" bindtap="ToCollection">
+    <view><image src="../../src/img/service/collection.png" mode="widthFix"></image></view>
+    <view>收藏</view>
+  </view>
+  <view class="icon" bindtap="ToSet">
+    <view><image src="../../src/img/service/set.png" mode="widthFix"></image></view>
+    <view>设置</view>
+  </view>
+  <view class="icon" bindtap="ToInvite">
+    <view><image src="../../src/img/service/invite.png" mode="widthFix"></image></view>
+    <view>邀请</view>
+  </view>
+  <view class="icon" bindtap="ToFeedback">
+    <view><image src="../../src/img/service/feedback.png" mode="widthFix"></image></view>
+    <view>反馈</view>
+  </view>
+</view>
