@@ -2,11 +2,33 @@ const app = getApp();
 Page({
   data: {
     statusBarHeight: 0, // 状态栏高度
-    currentTab: 0
+    currentTab: 0,
+    posts: {},
+    avatar: {},
   },
   onLoad: function (options) {
-    this.setData({
+    let that = this;
+    that.setData({
       statusBarHeight: app.globalData.systeminfo.statusBarHeight,
+    }),
+    wx.request({
+      url: 'https://moreover.atcumt.com/posts/post',
+      method: "GET",
+      header:{
+        token: app.globalData.userinfo.token,
+      },
+      success:function(res){
+        if(res.data.code===200){
+          that.setData({
+            posts: res.data.data,
+          });
+          for(let i = 0; i<res.data.data.length; i++){
+            that.setData({
+              avatar: avatar.push(res.data.data.head)
+            })
+          }
+        }
+      }
     })
   },
   PageChange: function(e){

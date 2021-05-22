@@ -23,7 +23,7 @@ Page({
   },
   Register: function(){
     let that = this;
-    if(that.password === that.repassword){
+    if(that.password !== that.repassword){
       wx.showToast({
         title: '两次输入密码不相同',
       })}

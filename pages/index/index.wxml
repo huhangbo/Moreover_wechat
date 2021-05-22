@@ -8,7 +8,17 @@
 </view>
 <swiper current="{{currentTab}}" bindchange="PageChange">
   <swiper-item>
-    <view>活动</view>
+    <view class="posts">
+      <view wx:for="{{posts}}" wx:key="id" class="post" bindtap="ToPost">
+        <view class="avatar"><image src="data:image/png;base64,{{avatar[index]}}"></image></view>
+        <view class="title">{{item.title}}</view>
+        <view class="location">{{item.location}}</view>
+        <view class="outline">{{item.outline}}</view>
+        <view class="thumbnailImage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
+          <image src="{{i}}"></image>
+        </view>
+      </view>
+    </view>
   </swiper-item>
   <swiper-item>
     <view>聊天</view>

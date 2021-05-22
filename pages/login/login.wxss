@@ -1,5 +1,5 @@
 /* pages/login/login.wxss */
-view {
+.username, .password {
   width: 50%;
   margin: 0 25%;
   display: flex;
