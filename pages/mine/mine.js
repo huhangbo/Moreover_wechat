@@ -1,11 +1,8 @@
 // pages/mine/mine.js
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userinfo: {},
   },
   ToMyIndex:function(){
     wx.navigateTo({
@@ -50,6 +47,21 @@ Page({
   ToFeedback: function(){
     wx.navigateTo({
       url: 'service/feedback/feedback',
+    })
+  },
+  onLoad: function(){
+    let that = this;
+    wx.request({
+      url: 'https://moreover.atcumt.com/userinfo/userinfo/'+app.globalData.userinfo.username,
+      method: "GET",
+      header: {
+        token: app.globalData.userinfo.token,
+      },
+      success: function(res) {
+        that.setData({
+          userinfo: res.data.data,
+        })
+      }
     })
   }
 })

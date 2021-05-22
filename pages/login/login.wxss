@@ -1,14 +1,27 @@
 /* pages/login/login.wxss */
+.container {
+  padding: 300rpx 0;
+}
+
 .username, .password {
-  width: 50%;
-  margin: 0 25%;
+  width: 70%;
+  height: 80rpx;
+  margin: 15rpx 15%;
   display: flex;
   border: solid 1px;
   border-radius: 50rpx;
 }
 
-image {
-  margin: 5px;
-  width: 14px;
-  height: 14px;
+.username image, .password image{
+  margin: 6px;
+  width: 50rpx;
+  height: 55rpx;
+}
+
+button {
+  margin: 15rpx;
+}
+
+input {
+  height: 100%;
 }
