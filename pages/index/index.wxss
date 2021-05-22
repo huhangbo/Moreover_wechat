@@ -13,3 +13,8 @@
   color: green;
   border-bottom: 5rpx solid green;
 }
+
+.thumimage {
+  width: 50rpx;
+  height: 50rpx;
+}

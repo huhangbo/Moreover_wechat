@@ -10,11 +10,11 @@
   <swiper-item>
     <view class="posts">
       <view wx:for="{{posts}}" wx:key="id" class="post" bindtap="ToPost">
-        <view class="avatar"><image src="data:image/png;base64,{{avatar[index]}}"></image></view>
+        <view class="avatar"><image src="{{avatar[0]}}"></image></view>
         <view class="title">{{item.title}}</view>
         <view class="location">{{item.location}}</view>
         <view class="outline">{{item.outline}}</view>
-        <view class="thumbnailImage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
+        <view class="thumimage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
           <image src="{{i}}"></image>
         </view>
       </view>

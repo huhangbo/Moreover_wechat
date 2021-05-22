@@ -3,8 +3,8 @@ Page({
   data: {
     statusBarHeight: 0, // 状态栏高度
     currentTab: 0,
-    posts: {},
-    avatar: {},
+    posts: [],
+    avatar: [],
   },
   onLoad: function (options) {
     let that = this;
@@ -22,9 +22,17 @@ Page({
           that.setData({
             posts: res.data.data,
           });
-          for(let i = 0; i<res.data.data.length; i++){
-            that.setData({
-              avatar: avatar.push(res.data.data.head)
+          for(let i = 0; i < res.data.data.length; i++){
+            wx.request({
+              url: res.data.data[i].head,
+              method: "GET",
+              header: {
+                token: app.globalData.userinfo.token,
+              },
+              success: function(sc){
+                console.log(sc);
+                that.data.avatar.push("data:image/jpeg;base64,"+sc.data.data);
+              }
             })
           }
         }
