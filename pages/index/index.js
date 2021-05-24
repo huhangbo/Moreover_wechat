@@ -7,12 +7,7 @@ Page({
     posts: [],
     avatar: [],
   },
-  onLoad: function (options) {
-    let that = this;
-   this.setData({
-      statusBarHeight: app.globalData.systeminfo.statusBarHeight,
-      windowHeight: app.globalData.systeminfo.windowHeight,
-    });
+  Load: function(that) {
     wx.request({
       url: 'https://moreover.atcumt.com/posts/post/1/10', 
       method: "GET",
@@ -46,6 +41,13 @@ Page({
       }
     })
   },
+  onLoad: function (options) {
+    this.setData({
+      statusBarHeight: app.globalData.systeminfo.statusBarHeight,
+      windowHeight: app.globalData.systeminfo.windowHeight,
+    });
+    this.Load(this);
+  },
   PageChange: function(e){
     let that = this;
     that.setData({
@@ -63,4 +65,7 @@ Page({
       })
     }
   },
+  RefPost:function(){
+    this.Load(this);
+  }
 })

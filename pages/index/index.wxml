@@ -8,7 +8,7 @@
 </view>
 <swiper current="{{currentTab}}" style="height:{{windowHeight}}px" bindchange="PageChange">
   <swiper-item>
-    <scroll-view scroll-y="true" refresher-enabled="ture">
+    <scroll-view scroll-y="true" bindscrolltoupper="RefPost">
       <view class="posts">
         <view wx:for="{{posts}}" wx:key="id" class="post" bindtap="ToPost">
             <view class="avatar"><image src="{{'data:image/jpeg;base64,'+avatar[index]}}"></image></view>
