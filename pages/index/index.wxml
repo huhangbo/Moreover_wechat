@@ -1,20 +1,22 @@
 <!--index.wxml-->
-<view class="nav" style="padding-top:{{statusBarHeight}}px">
-  <scroll-view scroll-x="true" scroll-left="{{scroll}}" class="tab">
-    <view class="{{currentTab==0? 'cur': ''}}" data-current="0" bindtap="switchNav">活动</view>
-    <view class="{{currentTab==1? 'cur': ''}}" data-current="1" bindtap="switchNav">闲聊</view>
-    <view class="{{currentTab==2? 'cur': ''}}" data-current="2" bindtap="switchNav">答疑</view>
-  </scroll-view> 
+<view class="top" style="height: {{statusBarHeight+buttonHeight}}px">
+  <view class="nav" style="padding-top:{{statusBarHeight}}px;height={{buttonHeight}}">
+    <scroll-view scroll-x="true" scroll-left="{{scroll}}" class="tab">
+      <view class="{{currentTab==0? 'cur': ''}}" data-current="0" bindtap="switchNav">活动</view>
+      <view class="{{currentTab==1? 'cur': ''}}" data-current="1" bindtap="switchNav">闲聊</view>
+      <view class="{{currentTab==2? 'cur': ''}}" data-current="2" bindtap="switchNav">答疑</view>
+    </scroll-view> 
+  </view>
 </view>
-<swiper current="{{currentTab}}" style="height:{{windowHeight}}px" bindchange="PageChange">
+<swiper current="{{currentTab}}" style="height:{{windowHeight-statusBarHeight-buttonHeight}}px;" bindchange="PageChange">
   <swiper-item>
-    <scroll-view scroll-y="true" bindscrolltoupper="RefPost">
+    <scroll-view  scroll-top="scrollTop" scroll-y="true" bindscroll="scroll" bindscrolltoupper="RefPost" bindscrolltolower="LoadPost">
       <view class="posts">
-        <view wx:for="{{posts}}" wx:key="id" class="post" bindtap="ToPost">
+        <view wx:for="{{posts}}" wx:key="{{item.id}}" class="post" bindtap="ToPost">
             <view class="avatar"><image src="{{'data:image/jpeg;base64,'+avatar[index]}}"></image></view>
             <view class="box">
               <view class="publisher">{{item.publisher}}</view>
-              <view class="time">{{item.startTime}}</view>
+              <view class="time">更新于{{timediff[index]}}</view>
               <view class="location">{{item.location}}</view>
             </view>
             <view class="title">{{item.title}}</view>
@@ -23,6 +25,10 @@
               <view class="thumimage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
                 <image src="{{i}}"></image>
               </view>
+            </view>
+            <view class="footer">
+              <text>{{item.star}}点赞</text> ·
+              <text>{{item.collection}}收藏</text>
             </view>
         </view>
       </view>

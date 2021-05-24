@@ -3,6 +3,10 @@ page {
   background-color: rgb(243, 243,243);
 }
 
+.nav {
+  position: fixed;
+}
+
 .tab {
   display: flex;
   flex-direction: row;
@@ -17,16 +21,15 @@ page {
   color: green;
   border-bottom: 5rpx solid green;
 }
-
-swiper {
-  width: 100%;
+scroll-view {
+  height: 100%;
 }
 
 .post {
   margin: 10px 2.5%;
   background-color: #fff;
   width: 95%;
-  height: 235px;
+  height: 240px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 10px;
@@ -35,7 +38,7 @@ swiper {
 .avatar {
   position: relative;
   width: 10%;
-  margin: 0 2.5%;
+  margin: 0 3%;
   height: 50px;
 }
 
@@ -48,7 +51,7 @@ swiper {
 }
 
 .box {
-  width: 85%;
+  width: 84%;
   height: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -62,28 +65,28 @@ swiper {
 
 .time, .location {
   height: 50%;
-  width: 40%;
+  width: 35%;
   font-size: small;
 }
 
 .title {
   font-size: large;
   width: 90%;
-  height: 30px;
+  height: 25px;
   margin: 0 5%;
 }
 
 .outline {
   width: 90%;
-  height: 50px;
-  margin: 0 5%;
+  height: 40px;
+  margin: 2px 5%;
 }
 
 .thum {
   display: flex;
   flex-direction: row;
   width: 90%;
-  margin: 0 5%;
+  margin: 0.5px 5%;
   height: 90px;
 }
 
@@ -100,4 +103,10 @@ swiper {
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.footer {
+  margin: 5px 5%;
+  height: 20px;
+  font-size: small;
 }
