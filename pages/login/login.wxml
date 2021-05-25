@@ -1,12 +1,16 @@
 <!--pages/login/login.wxml-->
-<view class="container">
+<view class="titlebox">
+  <view>矿小且</view>
+  <view>矿大社交app矿且小程序</view>
+</view>
+<view class="box">
   <view class="username">
     <image src="../../src/img/login/name.png"></image>
-    <input bindinput="GetUsername"/>
+    <input bindinput="GetUsername" placeholder="请输入账号" />
   </view>
   <view class="password">
     <image src="../../src/img/login/key.png"></image>
-    <input type="password" bindinput="GetPassword"/>
+    <input type="password" bindinput="GetPassword" placeholder="请输入密码"/>
   </view>
   <button type="primary" bindtap="Login">登录</button>
   <button type="primary" bindtap="ToRegister">注册</button>

@@ -1,6 +1,13 @@
 /**index.wxss**/
 page {
   background-color: rgb(243, 243,243);
+  height: 100%;
+}
+
+.bigbox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav {
@@ -21,7 +28,12 @@ page {
   color: green;
   border-bottom: 5rpx solid green;
 }
-scroll-view {
+
+.swiper {
+  flex: 1;
+}
+
+swiper{
   height: 100%;
 }
 
@@ -55,6 +67,10 @@ scroll-view {
   height: 50px;
   display: flex;
   flex-wrap: wrap;
+}
+
+scroll-view {
+  height: 100%;
 }
 
 .publisher {

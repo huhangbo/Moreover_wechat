@@ -2,9 +2,8 @@ const app = getApp();
 const utils = require('../../utils/util');
 Page({
   data: {
-    statusBarHeight: 0,
-    buttonHeight: 0,
-    windowHeight: 0,
+    systeminfo: {},
+    menuinfo: {},
     currentTab: 0,
     scroll: 0,
     page: {
@@ -30,8 +29,6 @@ Page({
             posts: content,
           })
           that.data.page.total = res.data.data.totalPages;
-          let head = [];
-          let time = [];
           for(let i = 0; i < res.data.data.content.length; i++){
             wx.request({
               url: res.data.data.content[i].head,
@@ -41,19 +38,17 @@ Page({
               },
               success: function(sc) {
                 if(sc.data.code === 200) {
-                  head.push(sc.data.data)
-                  let heads = that.data.avatar.concat(head);
+                  that.data.avatar.push(sc.data.data);
                   that.setData({
-                    avatar: heads,
+                    avatar: that.data.avatar,
                   })
                 }
               }
             })
-            let formatime = res.data.data.content[i].updataTime;
-            time.push(utils.getDateDiff(utils.formatTime(formatime)));
-            let timediffs = that.data.timediff.concat(time);
+            let fmtime = res.data.data.content[i].updateTime;
+            that.data.timediff.push(utils.getDateDiff(utils.formatTime(fmtime)));
             that.setData({
-              timediff: timediffs,
+              timediff: that.data.timediff,
             })
           }
         }
@@ -62,9 +57,8 @@ Page({
   },
   onLoad: function (options) {
     this.setData({
-      statusBarHeight: app.globalData.systeminfo.statusBarHeight,
-      windowHeight: app.globalData.systeminfo.windowHeight,
-      buttonHeight: app.globalData.menuinfo.height,
+      systeminfo: app.globalData.systeminfo,
+      menuinfo: app.globalData.menuinfo,
     });
     this.Load(this);
   },
@@ -94,7 +88,7 @@ Page({
   RefPost: function(){
     this.data.page.num = 1;
     this.data.posts = [];
-    this.data.avatat = [];
+    this.data.avatar = [];
     this.data.timediff = [];
     this.Load(this);
     },

@@ -1,1 +1,12 @@
-/* pages/login/register/register.wxss */
+page {
+  background: #4ECDC4; 
+  background: linear-gradient(to right, #BE93C5, #4ECDC4);
+}
+
+.container view {
+  height: 50rpx;
+  margin: 20rpx ;
+  border: solid 1rpx;
+  border-radius: 10rpx;
+  padding: 2rpx;
+}

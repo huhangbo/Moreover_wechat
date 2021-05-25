@@ -1,25 +1,53 @@
 /* pages/login/login.wxss */
-.container {
-  padding: 300rpx 0;
+page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #4ECDC4; 
+  background: linear-gradient(to right, #BE93C5, #4ECDC4);
+}
+
+.titlebox {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.titlebox view:first-child {
+  font-size: xx-large;
+  margin: 0.5em 0;
+}
+
+.titlebox view:last-child {
+  font-size: small;
+}
+
+.box {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+  width: 80%;
 }
 
 .username, .password {
-  width: 70%;
+  width: 100%;
   height: 80rpx;
-  margin: 15rpx 15%;
+  margin: 30rpx 0;
   display: flex;
-  border: solid 1px;
+  background-color: rgba(219,254,253,0.8);
+  border: solid 1rpx;
   border-radius: 50rpx;
 }
 
 .username image, .password image{
-  margin: 6px;
+  margin: 10rpx;
   width: 50rpx;
   height: 55rpx;
 }
 
 button {
-  margin: 15rpx;
+  margin: 20rpx;
+  border: solid 3rpx green;
 }
 
 input {

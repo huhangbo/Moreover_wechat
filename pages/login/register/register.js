@@ -23,10 +23,17 @@ Page({
   },
   Register: function(){
     let that = this;
-    if(that.password !== that.repassword){
+    if(that.data.password !== that.data.repassword){
       wx.showToast({
-        title: '两次输入密码不相同',
+        title: '两次密码不相同',
+        icon: 'error'
       })}
+    else if(that.data.username.length === 0 || that.data.password.length === 0 ||that.data.repassword.length === 0){
+      wx.showToast({
+        title: '不能为空哦',
+        icon: 'error'
+      })
+    }
     else{
       wx.request({
         url: 'https://moreover.atcumt.com/user/register',

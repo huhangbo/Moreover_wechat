@@ -23,14 +23,14 @@ Page({
   },
   Login: function(e) {
     var that = this;
-    if(that.data.username.length ==0 || that.data.password.length ==0){//校验非空
-      wx.showToast({  //弹框提示
+    if(that.data.username.length ==0 || that.data.password.length == 0){
+      wx.showToast({
         icon: 'none',
         title: '用户名或密码不能为空！',
         duration: 2000,
       })
     }else {
-      wx.request({  //向后台发送请求
+      wx.request({
         url: 'https://moreover.atcumt.com/user/login',
         method: "POST",
         header: { 'content-type': 'application/json' },
@@ -55,6 +55,7 @@ Page({
           else{
             wx.showToast({
               title: '用户名或密码错误',
+              icon: 'error',
             })
           }
         },

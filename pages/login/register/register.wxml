@@ -1,14 +1,13 @@
 <!--pages/login/register/register.wxml-->
+<view class="container">
   <view>
-  <label>用户名</label>
-  <input bindinput="GetUsername"/>
+  <input bindinput="GetUsername" placeholder="输入用户名"/>
   </view>
   <view>
-    <label>输入密码</label>
-    <input type="password" bindinput="GetPassword"/>
+    <input type="password" bindinput="GetPassword" placeholder="请输入密码"/>
   </view>
   <view>
-    <label>确认密码</label>
-    <input type="password" bindinput="GetRePassword"/>
+    <input type="password" bindinput="GetRePassword" placeholder="再次输入密码"/>
   </view>
   <button type="primary" bindtap="Register">注册</button>
+  </view>
