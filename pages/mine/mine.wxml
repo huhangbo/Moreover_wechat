@@ -13,7 +13,7 @@
   <view class="post">
     <view class="box" bindtap="ToPost">
       <view>{{userinfo.stars}}</view>
-      <view class="describe">动态</view>
+      <view class="describe">获赞</view>
     </view>
     <view class="box" bindtap="ToFollow">
       <view>{{userinfo.countOfFollow}}</view>
@@ -27,24 +27,26 @@
 </view>
 <view class="service">
   <view id="servicetext">服务</view>
-  <view class="icon" bindtap="ToSign">
-    <view><image src="../../src/img/service/sign.png" mode="widthFix"></image></view>
-    <view>签到</view>
-  </view>
-  <view class="icon" bindtap="ToCollection">
-    <view><image src="../../src/img/service/collection.png" mode="widthFix"></image></view>
-    <view>收藏</view>
-  </view>
-  <view class="icon" bindtap="ToSet">
-    <view><image src="../../src/img/service/set.png" mode="widthFix"></image></view>
-    <view>设置</view>
-  </view>
-  <view class="icon" bindtap="ToInvite">
-    <view><image src="../../src/img/service/invite.png" mode="widthFix"></image></view>
-    <view>邀请</view>
-  </view>
-  <view class="icon" bindtap="ToFeedback">
-    <view><image src="../../src/img/service/feedback.png" mode="widthFix"></image></view>
-    <view>反馈</view>
+  <view class="iconbox">
+    <view class="icon" bindtap="ToSign">
+      <view><image src="../../src/img/service/sign.png" mode="widthFix"></image></view>
+      <view>签到</view>
+    </view>
+    <view class="icon" bindtap="ToCollection">
+      <view><image src="../../src/img/service/collection.png" mode="widthFix"></image></view>
+      <view>收藏</view>
+    </view>
+    <view class="icon" bindtap="ToSet">
+      <view><image src="../../src/img/service/set.png" mode="widthFix"></image></view>
+      <view>设置</view>
+    </view>
+    <view class="icon" bindtap="ToInvite">
+      <view><image src="../../src/img/service/invite.png" mode="widthFix"></image></view>
+      <view>邀请</view>
+    </view>
+    <view class="icon" bindtap="ToFeedback">
+      <view><image src="../../src/img/service/feedback.png" mode="widthFix"></image></view>
+      <view>反馈</view>
+    </view>
   </view>
 </view>

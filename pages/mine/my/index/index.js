@@ -1,66 +1,69 @@
-// pages/mine/my/index/index.js
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userinfo: {},
+    systminfo: {},
+    menuinfo: {},
+    post: [],
+    like: [],
+    description: "这个人很懒什么都没有",
+    num: 0,
+  }, 
+  onLoad: function(){
+    let that = this;
+    that.setData({
+      systminfo: app.globalData.systeminfo,
+      menuinfo: app.globalData.menuinfo,
+    });
+    wx.request({
+      url: 'https://moreover.atcumt.com/userinfo/userinfo/'+app.globalData.userinfo.username,
+      method: "GET",
+      header: {
+        token: app.globalData.userinfo.token,
+      },
+      success: function(res) {
+        that.setData({
+          userinfo: res.data.data,
+        })
+        if(that.data.userinfo.describe)
+        that.setData({
+          description: that.data.userinfo.describe
+        })
+        for(let i = 0; i < res.data.data.collection.length; i++){
+          wx.request({
+            url: 'https://moreover.atcumt.com/posts/post/'+res.data.data.collection[i],
+            method: 'GET',
+            header: {
+              token: app.globalData.userinfo.token
+            },
+            success: function(re){
+              if(re.data.code === 200){
+                that.data.post.push(re.data.data);
+                that.setData({
+                  post: that.data.post,
+                })
+              }
+            }
+          })
+        }
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  Back: function(){
+    wx.navigateBack({
+      delta: 1,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onPageScroll: function(e){
+    if(e.scrollTop < 100){
+      this.setData({
+        num: e.scrollTop / 100,
+      })
+    }
+    else {
+      this.setData({
+        num: 1,
+      })
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

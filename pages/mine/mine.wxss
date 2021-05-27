@@ -1,8 +1,13 @@
-/* pages/mine/mine.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+}
+
 .mine {
-  height: 200px;
   display: flex;
   flex-wrap: wrap;
+  padding-bottom: 2em;
+  border-bottom: solid rgb(237,237,237);
 }
 
 .mine .avatar {
@@ -40,25 +45,43 @@
   width: 33%;
 }
 
-.service {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.post .box:nth-of-type(2) {
+  border-left: solid rgb(237,237,237);
+  border-right: solid rgb(237,237,237);
 }
 
-.service .icon {
-  width: 25%;
-  height: 60px;
+.describe {
+  color: rgb(200,200,200);
+}
+
+.into {
+  color: rgb(200,200,200);
+}
+
+.service {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 }
 
 #servicetext{
   width: 100%;
   font-size: larger;
   margin: 1em;
+}
+
+.iconbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icon {
+  font-size: small;
+  width: 7em;
+  height: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .service .icon view {

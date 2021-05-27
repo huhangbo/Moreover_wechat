@@ -4,9 +4,14 @@ page {
 }
 
 .container view {
-  height: 50rpx;
-  margin: 20rpx ;
+  width: 80%;
+  height: 2em;
+  margin: 1em 10% ;
   border: solid 1rpx;
-  border-radius: 10rpx;
-  padding: 2rpx;
+  border-radius: 1em;
+  padding: 2%;
+}
+
+input {
+  height: 100%;
 }
