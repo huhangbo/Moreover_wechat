@@ -105,9 +105,10 @@ Page({
       })
     }
   },
-  ToPost: function(){
+  ToPost: function(e){
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: './post/post',
+      url: './post/post?id=' + id,
     })
   }
 })

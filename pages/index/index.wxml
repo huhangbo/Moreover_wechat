@@ -14,7 +14,7 @@
   <swiper-item>
     <scroll-view  scroll-top="scrollTop" scroll-y="true" bindscroll="scroll" bindscrolltoupper="RefPost" bindscrolltolower="LoadPost">
       <view class="posts">
-        <view wx:for="{{posts}}" wx:key="{{item.id}}" class="post" bindtap="ToPost">
+        <view wx:for="{{posts}}" wx:key="{{item.id}}" data-id="{{item.id}}" class="post" bindtap="ToPost">
             <view class="avatar"><image src="{{'data:image/jpeg;base64,'+avatar[index]}}"></image></view>
             <view class="box">
               <view class="publisher">{{item.publisher}}</view>
