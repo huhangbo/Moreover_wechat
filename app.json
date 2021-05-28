@@ -3,6 +3,7 @@
     "pages/login/login",
     "pages/login/register/register",
     "pages/index/index",
+    "pages/index/post/post",
     "pages/community/community",
     "pages/mine/mine",
     "pages/mine/my/index/index",

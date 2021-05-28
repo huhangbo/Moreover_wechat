@@ -104,5 +104,10 @@ Page({
         duration: 500,
       })
     }
+  },
+  ToPost: function(){
+    wx.navigateTo({
+      url: './post/post',
+    })
   }
 })
