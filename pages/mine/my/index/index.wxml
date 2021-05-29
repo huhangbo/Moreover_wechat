@@ -35,12 +35,12 @@
     <view class="signature">{{description}}</view>
   </view>
   <view class="sticky" style="position: sticky; top: {{menuinfo.bottom}}px; background-color: #fff;">我的收藏</view>
-  <view class="collections" style="height: {{systminfo.windowHeight - menuinfo.bottom-48}}px">
-      <view wx:for="{{post}}" class="collection" style="height: {{systeminfo.windowHeight-menuinfo.bottom}}px">
+  <view class="collections" style="height:{{systminfo.windowHeight - menuinfo.bottom - 48}}px">
+      <view wx:for="{{post}}" class="collection">
         <view class="postimg"><image src="{{item.thumbnailImage[0]}}"></image></view>
         <view class="detail">
           <view class="title">{{item.title}}</view>
-          <view class="location">{{item.location}}</view>
+          <view class="location">地点：{{item.location}}</view>
           <view class="likeco">
             <view class="like">点赞{{item.star}}</view>
             <view>收藏{{item.collection}}</view>

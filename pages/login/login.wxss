@@ -34,15 +34,16 @@ page {
   height: 3em;
   margin: 0.8em 0;
   display: flex;
+  align-items: center;
   background-color: rgba(219,254,253,0.5);
   border: solid 1rpx;
   border-radius: 50rpx;
 }
 
 .username image, .password image{
-  margin: 2%;
-  width: 10%;
-  height: 75%;
+  width: 3em;
+  margin: 0;
+  height: 80%;
 }
 
 button {
@@ -53,4 +54,5 @@ button {
 
 input {
   height: 100%;
+  width: 75%;
 }

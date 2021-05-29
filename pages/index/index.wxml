@@ -10,7 +10,7 @@
   </view>
 </view>
 <view class="swiper">
-<swiper current="{{currentTab}}" bindchange="PageChange">
+<swiper current="{{currentTab}}" bindchange="PageChange" duration="150">
   <swiper-item>
     <scroll-view  scroll-top="scrollTop" scroll-y="true" bindscroll="scroll" bindscrolltoupper="RefPost" bindscrolltolower="LoadPost">
       <view class="posts">
@@ -19,15 +19,24 @@
             <view class="box">
               <view class="publisher">{{item.publisher}}</view>
               <view class="time">更新于{{timediff[index]}}</view>
-              <view class="location">{{item.location}}</view>
+              <view class="location">地点：{{item.location}}</view>
             </view>
             <view class="title">{{item.title}}</view>
             <view class="outline">{{item.outline}}</view>
-            <view class="thum">
-              <view class="thumimage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
-                <image src="{{i}}"></image>
+            <block wx:if="{{item.thumbnailImage.length !== 1}}">
+              <view class="thum">              
+                <view class="thumimage" wx:for="{{item.thumbnailImage}}" wx:for-item="i">
+                  <image src="{{i}}" mode="aspectFitp"></image>
+                </view>
+             </view>
+            </block>
+            <block wx:else>
+              <view class="thumone">
+                <view>
+                <image class="thumimage" src="{{item.thumbnailImage[0]}}" mode="widthFix"></image>
+                </view>
               </view>
-            </view>
+            </block>
             <view class="footer">
               <text>{{item.star}}点赞</text> ·
               <text>{{item.collection}}收藏</text>

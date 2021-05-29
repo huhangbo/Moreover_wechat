@@ -5,11 +5,11 @@
 </view>
 <view class="box">
   <view class="username">
-    <image src="../../src/img/login/name.png"></image>
+    <image src="../../src/img/login/user.svg"></image>
     <input bindinput="GetUsername" placeholder="请输入账号" />
   </view>
   <view class="password">
-    <image src="../../src/img/login/key.png"></image>
+    <image src="../../src/img/login/lock.svg"></image>
     <input type="password" bindinput="GetPassword" placeholder="请输入密码"/>
   </view>
   <button type="primary" bindtap="Login">登录</button>
