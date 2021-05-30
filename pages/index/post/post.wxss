@@ -1,0 +1,251 @@
+page {
+  background-color: #fff;
+  position: relative;
+}
+
+.postinfo, .colike {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.publisherinfo, .commentinfo {
+  margin: 0.5em 0 0 0;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  flex-flow: column wrap;
+  align-self: start;
+  align-content: flex-start;
+}
+
+.head, .commentavatar{
+  width: 3em;
+  height: 3em;
+}
+
+.head image , .commentavatar image{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.name, .commenter{
+  height: 1em;
+  padding: 0.25em 0;
+  width: 70%;
+}
+
+.publisherinfo .time, .commenttime{
+  font-size: small;
+  color: rgb(200, 200, 200);
+  width: 70%;
+}
+
+.main .location{
+  font-size: large;
+  margin: 0.2em 0;
+}
+
+.detail {
+  margin: 0.2em 0;
+}
+
+.postimg {
+  width: 100%;
+}
+
+.postimg view {
+  width: 100%;
+  margin: 0.5em 0;
+}
+
+.postimg image {
+  width: 100%;
+  border-radius: 0.8em;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5em;
+  background-color: #fff;
+  border-top: solid 1px rgb(243, 243, 243);
+  border-bottom: solid 1px rgb(243, 243, 243);
+}
+
+.sticky view {
+  margin: 0 0.5em;
+}
+
+.comment {
+  width: 100%;
+  border-bottom: solid 1px rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+}
+
+.commentmessage, .replybox {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-self: start;
+}
+
+.commentbefore, .replybefore {
+  width: 3em;
+}
+
+.commentafter {
+  width: 80%;
+  padding: 0.25em 0;
+  overflow-wrap: break-word;
+}
+
+.replyafter {
+  width: 80%;
+  padding: 0.25em 0;
+  overflow-wrap: break-word;
+  background-color: rgb(222, 222, 222);
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.commentreply {
+  font-size: small;
+  margin: 0.2em;
+}
+
+.more {
+  width: 100%;
+  text-align: center;
+  color: rgb(200, 200, 200);
+  margin: 0.8em 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.collect, .view, .like {
+  flex-grow: 1;
+  height: 1.2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0 2em 0;
+}
+
+.view {
+  border-left: solid 1px rgb(200, 200, 200);
+  border-right: solid 1px rgb(200, 200, 200);
+}
+
+.icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.footer image {
+  width: 100%;
+  height: 100%;
+}
+
+.footer .text {
+  height: 1.2em;
+}
+
+.cover {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.top {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.inputview {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 0.8em;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  min-height: 6em;
+  z-index: 1001;
+  background-color: #fff;
+  transform: translateY(100%);
+  animation: show 0.3s forwards;
+}
+
+@keyframes show {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes hide {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.reply {
+  width: 100%;
+  height: 2em;
+  padding: 0.5em 0 0 0;
+}
+
+.inputview form {
+  width: 100%;
+}
+
+.textarea {
+  width: 80%;
+  margin: 0 0 0.5em 0;
+  background-color: rgb(243, 243, 243);
+  border-radius: 1em;
+}
+
+.confirm {
+  width: 15%;
+  margin: 0 0 0.5em 5%;
+  text-align: center;
+  background-color: rgb(94, 211, 94);
+  border-radius: 10%;
+  height: 1.5em;
+}
+
+textarea {
+  height: 90%;
+  width: 90%;
+  margin: 5%;
+}
