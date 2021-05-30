@@ -52,7 +52,7 @@ Page({
             })
           }
         }
-      }
+      },
     })
   },
   onLoad: function (options) {

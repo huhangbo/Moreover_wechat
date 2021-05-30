@@ -1,2 +1,6 @@
-<!--pages/mine/service/sign/sign.wxml-->
-<text>pages/mine/service/sign/sign.wxml</text>
+<view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+    <view class="modals-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}"></view>
+</view>
+
+<button bindtap="showModal">点我</button>
