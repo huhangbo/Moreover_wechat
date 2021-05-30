@@ -114,6 +114,7 @@ page {
 .replyafter {
   width: 80%;
   padding: 0.25em 0;
+  margin: 0 0 0.25em 0;
   overflow-wrap: break-word;
   background-color: rgb(222, 222, 222);
   border-radius: 0.5em;
@@ -131,6 +132,7 @@ page {
   text-align: center;
   color: rgb(200, 200, 200);
   margin: 0.8em 0;
+  height: 2.6em;
 }
 
 .footer {
