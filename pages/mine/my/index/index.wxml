@@ -25,7 +25,7 @@
         <view class="describe">粉丝</view>
       </view>
     </view>
-    <view class="edit">编辑资料</view>
+    <view class="edit" bindtap="toedit">编辑资料</view>
   </view>
   <view class="information">
     <view class="nickname">{{userinfo.nickname}}</view>

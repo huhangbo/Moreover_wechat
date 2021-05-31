@@ -6,6 +6,8 @@ Page({
     head: "",
     publishtime: "",
     viewtext: "",
+    iscollect: false,
+    islike: false,
     currentTab: 0,
     totalcomment: 0,
     viewhidden: true,
@@ -39,6 +41,7 @@ Page({
             postinfo: res.data.data,
             publishtime: untils.formatTime(res.data.data.updateTime),
             systeminfo: app.globalData.systeminfo,
+            islike: res.data.data.starList.includes(app.globalData.userinfo.username)
           });
         };
         wx.request({
@@ -126,7 +129,21 @@ Page({
     }
   },
   collect: function(){
-    
+    let that = this;
+    wx.request({
+      url: 'https://moreover.atcumt.com/posts/collect/' + that.data.id,
+      method: "POST",
+      header: {
+        token: app.globalData.userinfo.token,
+      },
+      success: res=>{
+        if(res.data.code === 200){
+          that.setData({
+            iscollect: true,
+          })
+        }
+      }
+    })
   },
   view: function(e){
     let that = this;
@@ -155,7 +172,27 @@ Page({
     })
   },
   like: function(){
-
+    let that = this;
+    let star = '';
+    that.setData({
+      islike: !that.data.like,
+    })
+    if(that.data.islike) star = 'star';
+    else star = 'unstar';
+    wx.request({
+      url: 'https://moreover.atcumt.com/posts/' + star + '/' + that.data.id,
+      method: "POST",
+      header: {
+        token: app.globalData.userinfo.token,
+      },
+      success: res=>{
+      },
+      fail: error=>{
+        that.setData({
+          islike: !that.data.like,
+        })
+      }
+    })
   },
   onPullDownRefresh: function(){
     let that = this;

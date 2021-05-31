@@ -40,7 +40,7 @@
 </view>
 <view class="footer">
   <view class="collect" bindtap="collect">
-    <view class="icon"><image src="../../../src/img/post/collect.svg"></image></view>
+    <view class="icon"><image class="collected" wx:if="{{iscollect}}" src="../../../src/img/post/collected.svg"></image><image wx:else src="../../../src/img/post/collect.svg"></image></view>
     <view class="text">收藏</view>
   </view>
   <view class="view" bindtap="view">
@@ -48,7 +48,7 @@
     <view class="text">评论</view>
   </view>
   <view class="like" bindtap="like">
-    <view class="icon"><image src="../../../src/img/post/like.svg"></image></view>
+    <view class="icon"><image class="liked" wx:if="{{islike}}" src="../../../src/img/post/liked.svg"></image><image wx:else src="../../../src/img/post/like.svg"></image></view>
     <view class="text">点赞</view>
   </view>
 </view>

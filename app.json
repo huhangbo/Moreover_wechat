@@ -7,7 +7,7 @@
     "pages/community/community",
     "pages/mine/mine",
     "pages/mine/my/index/index",
-    "pages/mine/my/post/post",
+    "pages/mine/my/edit/edit",
     "pages/mine/my/follow/follow",
     "pages/mine/my/followers/followers",
     "pages/mine/service/sign/sign",

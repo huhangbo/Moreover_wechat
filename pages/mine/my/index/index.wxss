@@ -2,12 +2,6 @@ page {
   background-color: #fff;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-  }
-
 .bigbox {
   position: relative;
   width: 100%;
@@ -89,30 +83,40 @@ image {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 4em
+  height: 4.5em;
 }
 
 .nickname {
-  width: 20%;
   font-size: larger;
   text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 0 0.3em;
 }
 
 .sex {
-  width: 30%;
+  display: flex;
+  align-items: center;
 }
 
 .signature {
   width: 100%;
   font-size: small;
+  margin: 0 0.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sticky {
-  border-top: solid rgb(237,237,237);
-  border-bottom: solid rgb(237,237,237);
+  box-sizing: border-box;
+  border-top: solid 1px rgb(237,237,237);
+  border-bottom: solid 1px rgb(237,237,237);
   height: 3em;
   display: flex;
   align-items: center;
+  width: 100%;
+  padding: 0 0.5em;
 }
 
 .collections {

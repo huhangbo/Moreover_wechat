@@ -25,9 +25,10 @@ page {
   height: 90%;
   border-radius: 50%;
 }
+
 .infor {
-  width: 40%;
-  margin: 0 5%;
+  width: 44%;
+  margin: 0 3%;
 }
 
 .name {

@@ -54,6 +54,11 @@ Page({
       delta: 1,
     })
   },
+  toedit: function(){
+    wx.navigateTo({
+      url: '../edit/edit',
+    })
+  },
   onPageScroll: function(e){
     if(e.scrollTop < 100){
       this.setData({
