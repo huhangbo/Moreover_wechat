@@ -7,7 +7,8 @@ page {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 2em;
-  border-bottom: solid rgb(237,237,237);
+  border-bottom: solid 1px rgb(237,237,237);
+  width: 100%;
 }
 
 .mine .avatar {
@@ -27,7 +28,7 @@ page {
 }
 
 .infor {
-  width: 44%;
+  width: 42%;
   margin: 0 3%;
 }
 
@@ -62,12 +63,14 @@ page {
 .service {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 #servicetext{
+  box-sizing: border-box;
   width: 100%;
   font-size: larger;
-  margin: 1em;
+  padding: 1em;
 }
 
 .iconbox {
