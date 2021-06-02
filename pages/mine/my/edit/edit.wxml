@@ -1,0 +1,54 @@
+<view class="body">
+  <view class="avatar">
+    <view class="label">头像</view>
+    <view class="icon" bindtap="avatarchange">
+      <image src="{{'data:image/jpeg;base64,' + userinfo.head}}"></image>
+    </view>
+    <view class="go" bindtap="avatarchange">
+      <image src="../../../../src/img/right.svg"></image>
+    </view>
+  </view>
+  <view class="name">
+    <view class="label">昵称</view>
+    <view class="detail" bindtap="nameshow">{{userinfo.nickname}}</view>
+    <view class="go" bindtap="nameshow">
+      <image src="../../../../src/img/right.svg"></image>
+    </view>
+  </view>
+  <view class="sex">
+    <view class="label">性别</view>
+    <picker bindchange="changesex" value="{{sexindex}}" range="{{sex}}">
+      <view class="detail">{{sex[sexindex]}}</view>
+      <view class="go">
+        <image src="../../../../src/img/right.svg"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="signature">
+    <view class="label">个性签名</view>
+    <view class="detail" bindtap="signatureshow">{{userinfo.describe}}</view>
+    <view class="go" bindtap="signatureshow">
+      <image src="../../../../src/img/right.svg"></image>
+    </view>
+  </view>
+</view>
+<view class="namecover" hidden="{{name}}">
+  <view class="top">
+    <view class="cancel" bindtap="namehide">取消</view>
+    <view class="ok" bindtap="nameok">确认</view>
+  </view>
+  <view class="input">
+    <input placeholder="输入更改昵称" bindinput="nameinput"/>
+  </view>
+</view>
+
+<view class="signaturecover" hidden="{{signature}}">
+  <view class="top">
+    <view class="cancel" bindtap="signaturehide">取消</view>
+    <view class="ok" bindtap="signatureok">确认</view>
+  </view>
+  <view class="textarea">
+    <textarea placeholder="随便说点什么吧" bindinput="signatureinput"></textarea>
+  </view>
+</view>
+
