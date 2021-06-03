@@ -55,7 +55,7 @@
 <view class="cover" hidden="{{viewhidden}}">
   <view class="top" bindtap="viewhide"></view>
   <view class="inputview">
-    <view class="reply">回复{{reply.publisher}}</view>
+    <view class="reply">回复：{{reply.publisher}}</view>
       <view class="textarea">
         <textarea placeholder="写评论" auto-focus="true" auto-height="true" cursor-spacing="30" bindinput="viewinput" value="{{viewtext}}"></textarea>
       </view>

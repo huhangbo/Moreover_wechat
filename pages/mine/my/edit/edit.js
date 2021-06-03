@@ -1,9 +1,30 @@
 const app = getApp();
 var COS = require('../../../../utils/cos-wx-sdk-v5.js')
 var cos = new COS({
-  url: 'https://moreover-1305054989.cos.ap-nanjing.myqcloud.com',
-  SecretId: '',
-  SecretKey: '',
+  // 必选参数
+  getAuthorization: function (options, callback) {
+      wx.request({
+          url: 'https://moreover.atcumt.com/oss/upload_token',
+          method: "GET",
+          header: {
+            token: app.globalData.userinfo.token,
+          },
+          success: function (result) {
+              var data = JSON.parse(result.data.data);
+              console.log(data);
+              var credentials = data.credentials;
+              console.log(credentials);
+              if (!data || !credentials) return console.error('credentials invalid');
+              callback({
+                  TmpSecretId: credentials.tmpSecretId,
+                  TmpSecretKey: credentials.tmpSecretKey,
+                  XCosSecurityToken: credentials.sessionToken,
+                  StartTime: data.startTime,
+                  ExpiredTime: data.expiredTime, 
+              });
+          }
+      });
+  }
 });
 Page({
   data: {
@@ -121,11 +142,11 @@ Page({
       sourceType: ['album', 'camera'],
       success (res) {      
         var filePath = res.tempFiles[0].path;
-        var filename = filePath.substr(filePath.lastIndexOf('/') + 1);
+        var filename = app.globalData.userinfo.username;
         cos.postObject({
             Bucket: 'moreover-1305054989',
             Region: 'ap-nanjing',
-            Key: filename,
+            Key: 'avatar/'+filename,
             FilePath: filePath,
             onProgress: function (info) {
                 console.log(JSON.stringify(info));
