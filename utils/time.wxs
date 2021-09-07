@@ -1,0 +1,43 @@
+function formatTime(data){
+  var timestr = "";
+  timestr = data;
+  var timearr = timestr.split('T');
+  var ymd = timearr[0].split('-');
+  var hms = timearr[1].split('.');
+  var formatbefore = ymd[0] + '/' + ymd[1] + '/' + ymd[2] + ' ' + hms[0];
+  var format = getDate(Date.parse(formatbefore) + 8*60*60*1000);
+  var y = format.getFullYear();
+  var m = format.getMonth() + 1;
+  var d = format.getDate();
+  return y + "/" + (m < 10 ? "0" + m : m) + "/" + (d < 10 ? "0" + d : d) + " " + format.toTimeString().substring(0, 8);
+}
+
+function getTimeDistance(datetime){
+  var update = (Date.parse(datetime))/1000;
+  var now = (Date.parse(getDate()))/1000;
+  var limit = now - update;
+  var content="";
+  if(limit<60){
+    content = "刚刚";
+  }
+  else if(limit >= 60 && limit < 3600){
+    content = Math.floor(limit/60)+"分钟前";
+  }
+  else if(limit >= 3600 && limit < 86400){
+    content = Math.floor(limit/3600)+"小时前";
+  }
+  else if(limit >= 86400 && limit < 2592000){
+    content = Math.floor(limit/86400)+"天前";
+  }
+  else if(limit >= 2592000 && limit < 31104000){
+    content = Math.floor(limit/2592000)+"个月前";
+  }
+  else{
+    content = "很久前";
+  }
+  return content;
+}
+module.exports = {
+  formatTime: formatTime,
+  getTimeDistance: getTimeDistance,
+}

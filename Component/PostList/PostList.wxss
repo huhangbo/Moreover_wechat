@@ -1,0 +1,99 @@
+.postScroll {
+  height: 100%;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.post {
+  position: relative;
+  margin: 5px 2.5%;
+  background-color: #fff;
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}
+
+.avatar {
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.imageItem {
+  margin: 10% 0 0 10%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.box {
+  margin-left: 5%;
+  width: auto;
+  height: 3.5em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.publisher {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+.time, .location {
+  width: auto;
+  margin: 0.2em 1.5em 0.5em 0;
+  font-size: small;
+}
+
+.title {
+  font-size: larger;
+  width: 90%;
+  height: 1.5em;
+  margin: 0 5%;
+}
+
+.outline {
+  width: 90%;
+  margin: 0 5%;
+}
+
+.thum {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0.3em 5% 0 5%;
+  height: 6em;
+}
+
+.thum .thumItem {
+  height: 100%;
+  width: 30%;
+  margin: 0 2% 0 0;
+}
+
+.thumItemImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5em;
+}
+
+.thumone {
+  width: 66.7%;
+  height: auto;
+}
+
+.thumImage {
+  width: 100%;
+  border-radius: 5%;
+}
+
+.footer {
+  margin: 0 5% 0.5em 5%;
+  height: 20px;
+  font-size: small;
+}

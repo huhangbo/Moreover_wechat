@@ -1,9 +1,9 @@
 <view class="postinfo">
   <view class="title">{{postinfo.title}}</view>
   <view class="publisherinfo">
-    <view class="head"><image src="{{'data:image/jpeg;base64,' + head}}"></image></view>
-    <view class="name">{{postinfo.publisher}}</view>
-    <view class="time">{{publishtime}}</view>
+    <view class="head" data-user="{{postinfo.publisher}}" bindtap="toIndex"><image src="{{postinfo.avatar}}"></image></view>
+    <view class="name" data-user="{{postinfo.publisher}}" bindtap="toIndex">{{postinfo.publishername}}</view>
+    <view class="time">{{postinfo.publishtime}}</view>
   </view>
   <view class="main">
     <view class="location">地点：{{postinfo.location}}</view>
@@ -15,22 +15,29 @@
 </view>
 <view class="sticky">
   <view class="{{currentTab == 0? 'cur': ''}}" data-current='0' bindtap="switchNav">收藏 {{postinfo.collection}}</view>
-  <view class="{{currentTab == 1? 'cur': ''}}" data-current='1' bindtap="switchNav">评论 {{totalcomment}}</view>
+  <view class="{{currentTab == 1? 'cur': ''}}" data-current='1' bindtap="switchNav">评论 {{postinfo.totalcomment}}</view>
 </view>
 <view class="colike">  
-  <view wx:for="{{comments}}" class="comment">
+  <view wx:for="{{comments}}" class="comment" wx:key="id">
     <view class="commentinfo">
-      <view class="commentavatar"><image src="{{'data:image/jpeg;base64,'+avatar[index]}}"></image></view>
-      <view class="commenter">{{item.publisher}}</view>
-      <view class="commenttime">{{item.updateTime}}</view>
+      <view class="commentavatar" data-user="{{item.publisher}}" bindtap="toIndex"><image src="{{item.avatar}}"></image></view>
+      <view class="commenter" data-user="{{item.publisher}}" bindtap="toIndex">{{item.publishername}}</view>
+      <view class="commenttime">{{item.publishtime}}</view>
+      <view class="commentlike" data-id="{{item.id}}" data-index="{{index}}" bindtap="commentlike">
+        <view class="commentlikeicon">
+          <image wx:if="{{item.isliked}}" src="../../../src/img/post/liked.svg"></image>
+          <image wx:else src="../../../src/img/post/like.svg"></image>
+        </view>
+        <view class="commentlikes">{{item.starList.length}}</view>
+      </view>
     </view>
     <view class="commentmessage">
-      <view class="commentbefore"></view><view class="commentafter" bindtap="view" data-id="{{item.id}}" data-publisher="{{item.publisher}}">{{item.message}}</view>
+      <view class="commentbefore"></view><view class="commentafter" bindtap="view" data-id="{{item.id}}" data-publishername="{{item.publishername}}">{{item.message}}</view>
     </view>
     <view wx:if="{{childrencomments[index][0]}}" class="replybox">
       <view class="replybefore"></view>
       <view class="replyafter">
-        <view wx:for="{{childrencomments[index]}}" wx:for-item="i" class="commentreply">
+        <view wx:for="{{childrencomments[index]}}" wx:for-item="i" wx:key='id' class="commentreply">
           <text class="replyname">{{i.publisher}}</text>：<text class="replymessage">{{i.message}}</text>
         </view>
       </view>  
@@ -40,22 +47,22 @@
 </view>
 <view class="footer">
   <view class="collect" bindtap="collect">
-    <view class="icon"><image class="collected" wx:if="{{iscollect}}" src="../../../src/img/post/collected.svg"></image><image wx:else src="../../../src/img/post/collect.svg"></image></view>
+    <view class="icon"><image class="collected" wx:if="{{is.collect}}" src="../../../src/img/post/collected.svg"></image><image wx:else src="../../../src/img/post/collect.svg"></image></view>
     <view class="text">收藏</view>
   </view>
   <view class="view" bindtap="view">
     <view class="icon"><image src="../../../src/img/post/view.svg"></image></view>
     <view class="text">评论</view>
   </view>
-  <view class="like" bindtap="like">
-    <view class="icon"><image class="liked" wx:if="{{islike}}" src="../../../src/img/post/liked.svg"></image><image wx:else src="../../../src/img/post/like.svg"></image></view>
+  <view class="like" bindtap="postlike">
+    <view class="icon"><image class="liked" wx:if="{{is.like}}" src="../../../src/img/post/liked.svg"></image><image wx:else src="../../../src/img/post/like.svg"></image></view>
     <view class="text">点赞</view>
   </view>
 </view>
 <view class="cover" hidden="{{viewhidden}}">
   <view class="top" bindtap="viewhide"></view>
   <view class="inputview">
-    <view class="reply">回复：{{reply.publisher}}</view>
+    <view class="reply">回复：{{reply.publishername}}</view>
       <view class="textarea">
         <textarea placeholder="写评论" auto-focus="true" auto-height="true" cursor-spacing="30" bindinput="viewinput" value="{{viewtext}}"></textarea>
       </view>

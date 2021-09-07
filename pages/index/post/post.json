@@ -2,6 +2,5 @@
   "usingComponents": {},
   "navigationBarTitleText": "活动详情",
   "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50,
-  "backgroundTextStyle": "dark"
+  "onReachBottomDistance": 50
 }

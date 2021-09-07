@@ -1,13 +1,13 @@
 <!--pages/mine/mine.wxml-->
-<view class="mine"  bindtap="ToMyIndex">
-  <view class="avatar">
-    <image src="{{'data:image/jpeg;base64,'+userinfo.head}}"></image>
+<view class="mine">
+  <view class="avatar" bindtap="ToMyIndex">
+    <image src="{{userinfo.head}}"></image>
   </view>
-  <view class="infor">
+  <view class="infor" bindtap="ToMyIndex">
     <view class="name">{{userinfo.nickname}}</view>
     <view class="experience">经验：{{userinfo.exp}}</view>
   </view>
-  <view class="into">
+  <view class="into" bindtap="ToMyIndex">
     个人主页 >
   </view>
   <view class="post">

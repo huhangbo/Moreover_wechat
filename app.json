@@ -4,6 +4,7 @@
     "pages/login/register/register",
     "pages/index/index",
     "pages/index/post/post",
+    "pages/index/user/user",
     "pages/community/community",
     "pages/mine/mine",
     "pages/mine/my/index/index",

@@ -31,8 +31,8 @@ page {
 
 .avatar .icon {
   position: absolute;
-  height: 3.5em;
-  width: 3.5em;
+  height: 4.2em;
+  width: 4.2em;
   border-radius: 50%;
   right: 2.4em;
 }
@@ -40,6 +40,10 @@ page {
 image {
   width: 100%;
   height: 100%;
+}
+
+.avatar .icon image {
+  border-radius: 50%;
 }
 
 .go {

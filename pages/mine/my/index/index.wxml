@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="info">
-    <view class="avatar"><image src="{{'data:image/jpeg;base64,'+userinfo.head}}"></image></view>
+    <view class="avatar"><image src="{{userinfo.head}}"></image></view>
     <view class="post">
       <view class="box" bindtap="ToPost">
         <view>{{userinfo.stars}}</view>
@@ -25,7 +25,7 @@
         <view class="describe">粉丝</view>
       </view>
     </view>
-    <view class="edit" bindtap="toedit">编辑资料</view>
+    <view class="edit" bindtap="toedit"><text>编辑资料</text></view>
   </view>
   <view class="information">
     <view class="nickname">{{userinfo.nickname}}</view>
@@ -36,7 +36,7 @@
   </view>
   <view class="sticky" style="position: sticky; top: {{menuinfo.bottom}}px; background-color: #fff;">我的收藏</view>
   <view class="collections" style="height:{{systminfo.windowHeight - menuinfo.bottom - 48}}px">
-      <view wx:for="{{post}}" class="collection">
+      <view wx:for="{{post}}" wx:key="id" class="collection">
         <view class="postimg"><image src="{{item.thumbnailImage[0]}}"></image></view>
         <view class="detail">
           <view class="title">{{item.title}}</view>

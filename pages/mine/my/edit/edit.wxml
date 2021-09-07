@@ -2,7 +2,7 @@
   <view class="avatar">
     <view class="label">头像</view>
     <view class="icon" bindtap="avatarchange">
-      <image src="{{'data:image/jpeg;base64,' + userinfo.head}}"></image>
+      <image src="{{userinfo.head}}"></image>
     </view>
     <view class="go" bindtap="avatarchange">
       <image src="../../../../src/img/right.svg"></image>

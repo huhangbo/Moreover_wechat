@@ -1,20 +1,21 @@
-function formatTime(data){
+export function formatTime(data){
   let timestr = "";
   timestr = data;
   let timearr = timestr.split('T');
   let ymd = timearr[0].split('-');
   let hms = timearr[1].split('.');
-  let format = ymd[0] + '/' + ymd[1] + '/' + ymd[2] + ' ' + hms[0];
-  return format;
+  let formatbefore = ymd[0] + '/' + ymd[1] + '/' + ymd[2] + ' ' + hms[0];
+  let format = new Date(Date.parse(formatbefore) + 8*60*60*1000);
+  let y = format.getFullYear();
+  let m = format.getMonth() + 1;
+  let d = format.getDate();
+  return y + "/" + (m < 10 ? "0" + m : m) + "/" + (d < 10 ? "0" + d : d) + " " + format.toTimeString().substr(0, 8);
 }
 
-function getDateDiff(datetime){
-  console.log(datetime);
-  let update = (Date.parse(datetime))/1000 + 60*60*8;
+export function getTimeDistance(datetime){
+  let update = (Date.parse(datetime))/1000;
   let now = (Date.parse(new Date()))/1000;
-  console.log(new Date());
   let limit = now - update;
-  console.log(limit);
   let content="";
   if(limit<60){
     content = "刚刚";
@@ -35,9 +36,4 @@ function getDateDiff(datetime){
     content = "很久前";
   }
   return content;
-}
-
-module.exports = {
-  getDateDiff: getDateDiff,
-  formatTime: formatTime
 }

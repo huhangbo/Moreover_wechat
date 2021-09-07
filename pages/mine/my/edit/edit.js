@@ -1,7 +1,6 @@
 const app = getApp();
-var COS = require('../../../../utils/cos-wx-sdk-v5.js')
-var cos = new COS({
-  // 必选参数
+const COS = require('../../../../utils/cos-wx-sdk-v5.js')
+let cos = new COS({
   getAuthorization: function (options, callback) {
       wx.request({
           url: 'https://moreover.atcumt.com/oss/upload_token',
@@ -10,10 +9,8 @@ var cos = new COS({
             token: app.globalData.userinfo.token,
           },
           success: function (result) {
-              var data = JSON.parse(result.data.data);
-              console.log(data);
-              var credentials = data.credentials;
-              console.log(credentials);
+              let data = JSON.parse(result.data.data);
+              let credentials = data.credentials;
               if (!data || !credentials) return console.error('credentials invalid');
               callback({
                   TmpSecretId: credentials.tmpSecretId,
@@ -141,8 +138,8 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success (res) {      
-        var filePath = res.tempFiles[0].path;
-        var filename = app.globalData.userinfo.username;
+        let filePath = res.tempFiles[0].path;
+        let filename = app.globalData.userinfo.username;
         cos.postObject({
             Bucket: 'moreover-1305054989',
             Region: 'ap-nanjing',
@@ -153,6 +150,26 @@ Page({
             }
         }, function (err, data) {
             console.log(err || data);
+            if(data.statusCode === 200){
+              wx.request({
+                url: 'https://moreover.atcumt.com/userinfo/head',
+                method: "PUT",
+                header: {
+                  token: app.globalData.userinfo.token,
+                },
+                data: {
+                  "head": "https://moreover-1305054989.cos.ap-nanjing.myqcloud.com/avatar/"+filename
+                },
+                success: res => {
+                  console.log(res);
+                  if(res.data === 200){
+                    wx.showToast({
+                      title: '头像更改成功',
+                    })
+                  }
+                }
+              })
+            }
         });
       }
     })

@@ -27,23 +27,15 @@ page {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 6.5em;
+  height: 6em;
   margin-top: 5.5em;
   background-color: white;
 }
 
 .avatar {
-  position: relative;
-  width: 25%;
-  height: 0;
-  padding-top: 25%;
-  border-radius: 50%;
-}
-
-.avatar image {
-  position: absolute;
-  left: 0;
-  top: 0;
+  width: 6em;
+  height: 6em;
+  margin: -1em 0 0 0.5em;
 }
 
 image {
@@ -51,9 +43,13 @@ image {
   height: 100%;
 }
 
+.avatar image {
+  border-radius: 50%;
+}
+
 .post {
   height: 50%;
-  width: 75%;
+  width: 65%;
   display: flex;
   flex-direction: row;
 }
@@ -64,11 +60,15 @@ image {
 }
 
 .edit {
-  height: 1.7em;
+  height: 1.8em;
   width: 65%;
-  text-align: center;
+  margin: 0.3em 0 0 0;
   color: greenyellow;
-  border: solid greenyellow;
+  border: solid 2px greenyellow;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .box {

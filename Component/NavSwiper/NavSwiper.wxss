@@ -1,0 +1,26 @@
+.navSwiper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navItem {
+  display: inline-block;
+  text-align: center;
+  margin: 0.4rem .75rem 0;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.current {
+  color: green;
+  border-bottom: 5rpx solid green;
+}
+
+.content {
+  flex: 1;
+}
+
+.swiper{
+  height: 100%;
+}

@@ -1,0 +1,32 @@
+<wxs src="../../utils/time.wxs" module="Time"/>
+
+<scroll-view  class="postScroll" scroll-y="true" bindscrolltoupper="RefPost" bindscrolltolower="LoadMorePost">
+      <view class="posts">
+        <view wx:for="{{posts}}" wx:key="{{item.id}}" data-id="{{item.id}}" class="post" bindtap="toPost(item.id)">
+            <view class="avatar"><image src="{{item.head}}"></image></view>
+            <view class="box">
+              <view class="publisher">{{item.publisher}}</view>
+              <view class="time">更新于{{Time.getTimeDistance(Time.formatTime(item.updateTime))}}</view>
+              <view class="location">地点：{{item.location}}</view>
+            </view>
+            <view class="title">{{item.title}}</view>
+            <view class="outline">{{item.outline}}</view>
+              <view class="thum"> 
+                <block wx:if="{{item.thumbnailImage.length !== 1}}">             
+                  <view class="thumItem" wx:for="{{item.thumbnailImage}}" wx:for-item="imageItem" wx:key="index">
+                    <image class="thumItemImage" src="{{imageItem}}" mode="aspectFitp"></image>
+                  </view>
+                </block>
+                <block wx:else>
+                  <view class="thumone">
+                    <image class="thumImage" src="{{item.thumbnailImage[0]}}" mode="widthFix"></image>
+                  </view>
+                  </block>
+             </view>
+            <view class="footer">
+              <text>{{item.star}}点赞</text> ·
+              <text>{{item.collection}}收藏</text>
+            </view>
+        </view>
+      </view>
+    </scroll-view>

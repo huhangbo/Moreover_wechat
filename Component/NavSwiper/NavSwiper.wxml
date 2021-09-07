@@ -1,0 +1,14 @@
+<view class="navSwiper">
+  <view class="nav" style="padding-top: {{systemInfo.statusBarHeight}}px; height:{{menuInfo.height}}px">
+    <scroll-view scroll-x="true" class="{{currentTab === index? 'current navItem' : 'navItem'}}" wx:for="{{title}}" wx:key="index" data-current="{{index}}" bindtap="changeNav">
+      {{item}}
+    </scroll-view> 
+  </view>
+  <view class="content">
+  <swiper class="swiper" current="{{currentTab}}" bindchange="swiperChange" duration="150" >
+    <swiper-item wx:for="{{title}}"  wx:key="index">
+      <slot name="{{item}}" ></slot>
+    </swiper-item>
+  </swiper>
+  </view>
+</view>
