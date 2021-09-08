@@ -6,23 +6,7 @@
   <view class="{{currentTab == 0? 'cur': ''}}" data-current='0' bindtap="switchNav">收藏 {{postinfo.collection}}</view>
   <view class="{{currentTab == 1? 'cur': ''}}" data-current='1' bindtap="switchNav">评论 {{postinfo.totalcomment}}</view>
 </view>
-<view class="colike">  
-  <view wx:for="{{comments}}" class="comment" wx:key="id">
-    <UserBox user="{{item.publisher}}" avater="{{item.avatar}}" time="{{item.updateTime}}" showLike="{{true}}" commitId="{{item.id}}" isLiked="{{item.isliked}}" likeCount="{{item.starList.length}}"/>
-    <view class="commentmessage">
-      <view class="commentbefore"></view><view class="commentafter" bindtap="view" data-id="{{item.id}}" data-publishername="{{item.publishername}}">{{item.message}}</view>
-    </view>
-    <view wx:if="{{childrencomments[index][0]}}" class="replybox">
-      <view class="replybefore"></view>
-      <view class="replyafter">
-        <view wx:for="{{childrencomments[index]}}" wx:for-item="i" wx:key='id' class="commentreply">
-          <text class="replyname">{{i.publisher}}</text>：<text class="replymessage">{{i.message}}</text>
-        </view>
-      </view>  
-    </view>
-  </view>
-  <view class="more">没有更多了，快来发表评论或点赞吧！</view>
-</view>
+
 <view class="footer">
   <view class="collect" bindtap="collect">
     <view class="icon"><image class="collected" wx:if="{{is.collect}}" src="../../../src/img/post/collected.svg"></image><image wx:else src="../../../src/img/post/collect.svg"></image></view>

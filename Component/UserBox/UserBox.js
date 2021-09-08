@@ -5,7 +5,7 @@ Component({
     avater: "",
     time: "",
     showLike: true,
-    commitId: "",
+    commentId: "",
     lsliked: false,
     likeCount: 0,
   },

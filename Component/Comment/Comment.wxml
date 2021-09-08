@@ -1,0 +1,17 @@
+<view class="comment">  
+  <view wx:for="{{comments}}" class="commentItem" wx:key="id">
+    <!-- <UserBox user="{{item.publisher}}" avater="{{item.avatar}}" time="{{item.updateTime}}" showLike="{{true}}" commitId="{{item.id}}" isLiked="{{item.isliked}}" likeCount="{{item.starList.length}}"/> -->
+    <view class="commentParent">
+      <view class="commentParentDetail" bindtap="comment" data-id="{{item.id}}" data-publisherName="{{item.publishername}}">
+      {{item.message}}
+      </view>
+    </view>
+    <view wx:if="{{childrencomments[index][0]}}" class="commentChildren">
+        <view wx:for="{{childrencomments[index]}}" wx:for-item="childrenItem" wx:key='id' class="commentChildrenItem">
+          <text class="childrenUser">{{childrenItem.publisher}}：</text>
+          <text class="commentChildrenDetail">{{childrenItem.message}}</text>
+        </view>  
+    </view>
+  </view>
+  <view class="more">快来发表评论或点赞吧！</view>
+</view>

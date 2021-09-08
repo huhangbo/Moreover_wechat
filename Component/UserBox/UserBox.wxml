@@ -4,7 +4,7 @@
   <text class="name" data-user="{{user}}" bindtap="toUser">{{user}}</text>
   <text class="time">{{Time.formatTime(time)}}</text>
   <block wx:if="{{showLike}}">
-    <view class="like" data-id="{{commitId}}" bindtap="doLike">
+    <view class="like" data-id="{{commentId}}" bindtap="doLike">
       <view class="likeIcon">
         <image class="image" wx:if="{{isliked}}" src="/src/img/post/liked.svg"></image>
         <image wx:else src="/src/img/post/like.svg"></image>

@@ -1,22 +1,23 @@
 const app = getApp();
+import {request} from "../../../utils/request"
 import {formatTime, getDateDiff} from "../../../utils/time"
 Page({
   data: {
     id: "",
     viewtext: "",
     is: {
-      collect: false,
-      like: false,
+      collected: false,
+      liked: false,
     },
     count: -1,
     currentTab: 0,
     viewhidden: true,
     systeminfo: {},
-    postinfo: {},
+    postInfo: {},
     comments: [],
     childrencomments: [],
     commentpage: {
-      num: 1,
+      current: 1,
       size: 10,
       total: 1,
     },
@@ -309,5 +310,19 @@ Page({
     wx.navigateTo({
       url: '../user/user?user=' + user,
     })
+  },
+  getPostInfo: async function (id) {
+    const post = await request("GET", `/posts/post/${this.data.id}`)
+    const publisher = await request("GET", `/userinfo/userinfo/${post.publisher}`)
+    this.setData({
+      postInfo: post,
+      ['postInfo.publisherName']:  publisher.nickname,
+      ['postInfo.avater']: publisher.head,
+      ['is.like']: post.starList.includes(app.globalData.userinfo.username)
+    })
+  },
+  getComment: async function (current, size, isFresh=false) {
+    
   }
 })
+
