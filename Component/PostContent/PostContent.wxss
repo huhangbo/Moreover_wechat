@@ -1,0 +1,35 @@
+.postContent {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 0.8em;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: x-large;
+}
+
+.main .location{
+  font-size: large;
+  margin: 0.2em 0;
+}
+
+.detail {
+  margin: 0.2em 0;
+}
+
+.postImg {
+  width: 100%;
+  margin: 0 0 0.5em 0;
+}
+
+.PostImgItem {
+  width: 100%;
+  margin: 0.2em 0;
+}
+
+.image {
+  width: 100%;
+  border-radius: 0.3em;
+}

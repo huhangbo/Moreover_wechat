@@ -1,36 +1,14 @@
-<view class="postinfo">
-  <view class="title">{{postinfo.title}}</view>
-  <view class="publisherinfo">
-    <view class="head" data-user="{{postinfo.publisher}}" bindtap="toIndex"><image src="{{postinfo.avatar}}"></image></view>
-    <view class="name" data-user="{{postinfo.publisher}}" bindtap="toIndex">{{postinfo.publishername}}</view>
-    <view class="time">{{postinfo.publishtime}}</view>
-  </view>
-  <view class="main">
-    <view class="location">地点：{{postinfo.location}}</view>
-    <view class="detail">{{postinfo.detail}}</view>
-  </view>
-  <view class="postimg">
-    <view wx:for="{{postinfo.thumbnailImage}}"><image src="{{item}}" mode="widthFix"></image></view>
-  </view>
-</view>
+<PostContent title="{{postinfo.title}}" location="{{postinfo.location}}" detail="{{postinfo.detail}}" originalImage="{{postinfo.originalImage}}">
+  <UserBox user="{{postinfo.publisher}}" avater="{{postinfo.avatar}}" time="{{postinfo.updateTime}}" showLike="{{false}}"/>
+</PostContent>
+
 <view class="sticky">
   <view class="{{currentTab == 0? 'cur': ''}}" data-current='0' bindtap="switchNav">收藏 {{postinfo.collection}}</view>
   <view class="{{currentTab == 1? 'cur': ''}}" data-current='1' bindtap="switchNav">评论 {{postinfo.totalcomment}}</view>
 </view>
 <view class="colike">  
   <view wx:for="{{comments}}" class="comment" wx:key="id">
-    <view class="commentinfo">
-      <view class="commentavatar" data-user="{{item.publisher}}" bindtap="toIndex"><image src="{{item.avatar}}"></image></view>
-      <view class="commenter" data-user="{{item.publisher}}" bindtap="toIndex">{{item.publishername}}</view>
-      <view class="commenttime">{{item.publishtime}}</view>
-      <view class="commentlike" data-id="{{item.id}}" data-index="{{index}}" bindtap="commentlike">
-        <view class="commentlikeicon">
-          <image wx:if="{{item.isliked}}" src="../../../src/img/post/liked.svg"></image>
-          <image wx:else src="../../../src/img/post/like.svg"></image>
-        </view>
-        <view class="commentlikes">{{item.starList.length}}</view>
-      </view>
-    </view>
+    <UserBox user="{{item.publisher}}" avater="{{item.avatar}}" time="{{item.updateTime}}" showLike="{{true}}" commitId="{{item.id}}" isLiked="{{item.isliked}}" likeCount="{{item.starList.length}}"/>
     <view class="commentmessage">
       <view class="commentbefore"></view><view class="commentafter" bindtap="view" data-id="{{item.id}}" data-publishername="{{item.publishername}}">{{item.message}}</view>
     </view>

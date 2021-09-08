@@ -2,7 +2,7 @@
 
 <scroll-view  class="postScroll" scroll-y="true" bindscrolltoupper="RefPost" bindscrolltolower="LoadMorePost">
       <view class="posts">
-        <view wx:for="{{posts}}" wx:key="{{item.id}}" data-id="{{item.id}}" class="post" bindtap="toPost(item.id)">
+        <view wx:for="{{posts}}" wx:key="id" data-id="{{item.id}}" class="post" bindtap="toPost">
             <view class="avatar"><image src="{{item.head}}"></image></view>
             <view class="box">
               <view class="publisher">{{item.publisher}}</view>

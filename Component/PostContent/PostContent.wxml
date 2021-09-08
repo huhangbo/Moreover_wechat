@@ -1,0 +1,13 @@
+<view class="postContent">
+  <view class="title">{{title}}</view>
+  <slot></slot>
+  <view class="main">
+    <view class="location">地点：{{location}}</view>
+    <view class="detail">{{detail}}</view>
+  </view>
+  <view class="postImg">
+    <view class="postImgItem" wx:for="{{originalImage}}" wx:key="index">
+    <image class="image" src="{{item}}" mode="widthFix"/>
+    </view>
+  </view>
+</view>

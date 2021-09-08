@@ -35,9 +35,9 @@ Component({
     refreshPost: function () {
       this.getPost(1, this.data.page.size, true)
     },
-    toPost: function (id) {
-      this.pageRouter.wx.navigateTo({
-        url: `/pages/index/post/post?id=${id}`,
+    toPost: function (e) {
+      this.pageRouter.navigateTo({
+        url: `/pages/index/post/post?id=${e.currentTarget.dataset.id}`,
       })
     }
   },

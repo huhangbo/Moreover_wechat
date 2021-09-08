@@ -1,9 +1,9 @@
 function formatTime(data){
   var timestr = "";
   timestr = data;
-  var timearr = timestr.split('T');
-  var ymd = timearr[0].split('-');
-  var hms = timearr[1].split('.');
+  var timearr = (data||"").split('T');
+  var ymd = (timearr[0]||"").split('-');
+  var hms = (timearr[1]||"").split('.');
   var formatbefore = ymd[0] + '/' + ymd[1] + '/' + ymd[2] + ' ' + hms[0];
   var format = getDate(Date.parse(formatbefore) + 8*60*60*1000);
   var y = format.getFullYear();
