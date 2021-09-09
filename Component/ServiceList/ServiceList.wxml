@@ -1,0 +1,9 @@
+<view class="serviceBox">
+  <view class="text">服务</view>
+  <view class="serviceList">
+    <view class="item" bindtap="goTo" wx:for="{{list}}" wx:key="index" data-key="{{item.key}}">
+      <view class="icon"><image class="image" src="{{item.icon}}" mode="widthFix"></image></view>
+      <text class="title">{{item.title}}</text>
+    </view>
+  </view>
+</view>

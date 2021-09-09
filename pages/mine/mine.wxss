@@ -61,39 +61,3 @@ page {
 .into {
   color: rgb(200,200,200);
 }
-
-.service {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-#servicetext{
-  box-sizing: border-box;
-  width: 100%;
-  font-size: larger;
-  padding: 1em;
-}
-
-.iconbox {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.icon {
-  font-size: small;
-  width: 7em;
-  height: 5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.service .icon view {
-  width: 35%;
-}
-
-.service .icon image {
-  width: 100%;
-}

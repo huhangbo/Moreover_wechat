@@ -24,31 +24,6 @@ Page({
       url: 'my/followers/followers',
     })
   },
-  ToSign: function(){
-    wx.navigateTo({
-      url: 'service/sign/sign',
-    })
-  },
-  ToCollection: function(){
-    wx.navigateTo({
-      url: 'service/collection/collection',
-    })
-  },
-  ToSet: function(){
-    wx.navigateTo({
-      url: 'service/set/set',
-    })
-  },
-  ToInvite: function(){
-    wx.navigateTo({
-      url: 'service/invite/invite',
-    })
-  },
-  ToFeedback: function(){
-    wx.navigateTo({
-      url: 'service/feedback/feedback',
-    })
-  },
   onLoad: function(){
     let that = this;
     wx.request({

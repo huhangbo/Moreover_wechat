@@ -1,0 +1,33 @@
+.serviceList {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+.text {
+  width: 100%;
+  font-size: larger;
+  margin: 1rem;
+}
+
+.serviceList {
+  box-sizing: border-box;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.item {
+  width: 4rem;
+  height: 7rem;
+  padding: 0 .5rem;
+}
+
+.icon {
+  margin: 0 auto;
+  height: 3rem;
+  width: 3rem;
+}
