@@ -1,0 +1,28 @@
+<view class="background">
+    <image src="{{userInfo.back}}"></image>
+  </view>
+  <view class="info">
+    <view class="avatar"><image src="{{userInfo.head}}"></image></view>
+    <view class="post">
+      <view class="box" bindtap="ToPost">
+        <view>{{userInfo.stars}}</view>
+        <view class="describe">获赞</view>
+      </view>
+      <view class="box" bindtap="ToFollow">
+        <view>{{userInfo.countOfFollow}}</view>
+        <view class="describe">关注</view>
+      </view>
+      <view class="box" bindtap="ToFollowers">
+        <view>{{userInfo.countOfFollowers}}</view>
+        <view class="describe">粉丝</view>
+      </view>
+    </view>
+    <view class="edit" bindtap="toedit"><text>编辑资料</text></view>
+  </view>
+  <view class="information">
+    <view class="nickname">{{userInfo.nickname}}</view>
+    <view class="sex">
+      <view class="sexdescribe">{{userInfo.sex}}</view><view class="sexicon"></view>
+    </view>
+    <view class="signature">{{userInfo.description}}</view>
+  </view>

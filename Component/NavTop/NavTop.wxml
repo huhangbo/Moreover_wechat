@@ -1,0 +1,5 @@
+<view  class="navTop" style="height:{{menuInfo.bottom}}px; padding: {{systemInfo.statusBarHeight}}px 0 0 .5rem; background-color: rgba(255,255,255,{{opacity}}); z-index: 2;">
+  <view class="back" bindtap="goBack">
+    <text decode="true">&lt;</text>
+  </view>
+</view>

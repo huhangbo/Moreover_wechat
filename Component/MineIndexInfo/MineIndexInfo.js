@@ -1,0 +1,8 @@
+Component({
+  properties: {
+    userInfo: {},
+  },
+  methods: {
+
+  }
+})

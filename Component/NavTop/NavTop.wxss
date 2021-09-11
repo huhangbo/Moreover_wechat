@@ -1,0 +1,12 @@
+.navTop {
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+.back {
+  height: 100%;
+  font-size: x-large;
+  color: rgb(117,117,117);
+}
