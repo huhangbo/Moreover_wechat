@@ -1,58 +1,26 @@
-const app = getApp();
+const app = getApp()
+import {request} from "../../../../utils/request"
 Page({
   data: {
-    userinfo: {},
-    systminfo: {},
-    menuinfo: {},
-    post: [],
+    menuInfo: app.globalData.menuinfo,
+    systemInfo: app.globalData.systeminfo,
+    userInfo: {},
+    collection: [],
     like: [],
     description: "这个人很懒什么都没有",
-    num: 0,
+    navOpacity: 0,
   }, 
   onLoad: function(){
-    let that = this;
-    that.setData({
-      systminfo: app.globalData.systeminfo,
-      menuinfo: app.globalData.menuinfo,
-    });
-    wx.request({
-      url: 'https://moreover.atcumt.com/userinfo/userinfo/'+app.globalData.userinfo.username,
-      method: "GET",
-      header: {
-        token: app.globalData.userinfo.token,
-      },
-      success: function(res) {
-        that.setData({
-          userinfo: res.data.data,
-        })
-        if(that.data.userinfo.describe)
-        that.setData({
-          description: that.data.userinfo.describe
-        })
-        for(let i = 0; i < res.data.data.collection.length; i++){
-          wx.request({
-            url: 'https://moreover.atcumt.com/posts/post/'+res.data.data.collection[i],
-            method: 'GET',
-            header: {
-              token: app.globalData.userinfo.token
-            },
-            success: function(re){
-              if(re.data.code === 200){
-                that.data.post.push(re.data.data);
-                that.setData({
-                  post: that.data.post,
-                })
-              }
-            }
-          })
-        }
-      }
-    })
+    this.getUserInfo(app.globalData.userinfo.username)
   },
-  Back: function(){
-    wx.navigateBack({
-      delta: 1,
-    })
+  getUserInfo: async function (username) {
+    let collection = []
+    const userInfo = await request("GET", `userinfo/userinfo/${username}`)
+    for(let i=0; i<userInfo.collection.length; i++){
+      const item = await request("GET", `posts/post/${userInfo.collection[i]}`)
+      collection.push(item)
+    }
+    this.setData({userInfo: userInfo, collection: collection})
   },
   toedit: function(){
     wx.navigateTo({
@@ -62,12 +30,12 @@ Page({
   onPageScroll: function(e){
     if(e.scrollTop < 100){
       this.setData({
-        num: e.scrollTop / 100,
+        navOpacity: e.scrollTop / 100,
       })
     }
     else {
       this.setData({
-        num: 1,
+        navOpacity: 1,
       })
     }
   },

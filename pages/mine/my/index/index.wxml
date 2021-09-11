@@ -1,13 +1,7 @@
-<view class="bigbox">
-  <view class="bg">
+<NavTop opacity="{{navOpacity}}"/>
+<MineIndexInfo userInfo="{{userInfo}}" />
+  <!-- <view class="background">
     <image src="{{userinfo.back}}"></image>
-  </view>
-  <view class="top" style="height:{{menuinfo.bottom}}px;"> 
-    <view class="nav" bindtap="Back" style="position: fixed; height: {{menuinfo.height+4}}px; padding: {{systminfo.statusBarHeight}}px 0 0 0.5em; width: 100%; background-color: rgba(255,255,255,{{num}}); z-index: 2;">
-      <view class="back">
-        <text decode="true">&lt;</text>
-      </view>
-    </view>
   </view>
   <view class="info">
     <view class="avatar"><image src="{{userinfo.head}}"></image></view>
@@ -33,10 +27,10 @@
       <view class="sexdescribe">{{userinfo.sex}}</view><view class="sexicon"></view>
     </view>
     <view class="signature">{{description}}</view>
-  </view>
-  <view class="sticky" style="position: sticky; top: {{menuinfo.bottom}}px; background-color: #fff;">我的收藏</view>
-  <view class="collections" style="height:{{systminfo.windowHeight - menuinfo.bottom - 48}}px">
-      <view wx:for="{{post}}" wx:key="id" class="collection">
+  </view> -->
+  <view class="sticky" style="position: sticky; top: {{menuInfo.bottom}}px; background-color: #fff;">我的收藏</view>
+  <view class="collections" style="height:calc({{systemInfo.windowHeight-menuInfo.bottom}}px - 3rem)">
+      <view wx:for="{{collection}}" wx:key="id" class="collection">
         <view class="postimg"><image src="{{item.thumbnailImage[0]}}"></image></view>
         <view class="detail">
           <view class="title">{{item.title}}</view>
@@ -48,4 +42,3 @@
         </view>
       </view>
   </view>
-</view>
