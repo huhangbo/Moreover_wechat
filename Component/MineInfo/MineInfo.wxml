@@ -1,0 +1,26 @@
+<view class="mineInfo">
+  <view class="avatar" bindtap="toMyIndex">
+    <image class="image" src="{{userInfo.head}}"></image>
+  </view>
+  <view class="info" bindtap="toMyIndex">
+    <view class="name">{{userInfo.nickname}}</view>
+    <view class="experience">经验：{{userInfo.exp}}</view>
+  </view>
+  <view class="into" bindtap="toMyIndex">
+    个人主页 >
+  </view>
+  <view class="post">
+    <view class="item" bindtap="toUrl" data-key="like">
+      <view>{{userInfo.stars}}</view>
+      <view class="describe">获赞</view>
+    </view>
+    <view class="item" bindtap="toUrl" data-key="follow">
+      <view>{{userInfo.countOfFollow}}</view>
+      <view class="describe">关注</view>
+    </view>
+    <view class="item" bindtap="toUrl" data-key="followers">
+      <view>{{userInfo.countOfFollowers}}</view>
+      <view class="describe">粉丝</view>
+    </view>
+  </view>
+</view>

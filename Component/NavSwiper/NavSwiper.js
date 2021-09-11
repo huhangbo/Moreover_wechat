@@ -1,14 +1,13 @@
+const APP = getApp()
 Component({
   options: {
     multipleSlots: true 
   },
-  properties: {
-    systemInfo: {},
-    menuInfo: {},
-    title: [],
-  },
   data: {
+    title: ["活动", "闲聊", "答疑"],
     currentTab: 0,
+    systemInfo: APP.globalData.systeminfo,
+    menuInfo: APP.globalData.menuinfo,
   },
   methods: {
     changeNav: function(e) {

@@ -1,4 +1,4 @@
-<NavSwiper title="{{title}}" systemInfo="{{systemInfo}}" menuInfo="{{menuInfo}}">
+<NavSwiper>
   <PostList slot="活动"/>
   <view slot="闲聊">
     聊天

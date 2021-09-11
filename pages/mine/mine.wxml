@@ -1,5 +1,5 @@
 <!--pages/mine/mine.wxml-->
-<view class="mine">
+<!-- <view class="mine">
   <view class="avatar" bindtap="ToMyIndex">
     <image src="{{userinfo.head}}"></image>
   </view>
@@ -24,5 +24,6 @@
       <view class="describe">粉丝</view>
     </view>
   </view>
-</view>
+</view> -->
+<MineInfo userInfo="{{userInfo}}"/>
 <ServiceList list="{{list}}"/>

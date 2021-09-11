@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "ServiceList": "/Component/ServiceList/ServiceList"
+    "ServiceList": "/Component/ServiceList/ServiceList",
+    "MineInfo": "/Component/MineInfo/MineInfo"
   }
 }
