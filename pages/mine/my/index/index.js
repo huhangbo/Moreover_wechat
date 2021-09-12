@@ -22,11 +22,6 @@ Page({
     }
     this.setData({userInfo: userInfo, collection: collection})
   },
-  toedit: function(){
-    wx.navigateTo({
-      url: '../edit/edit',
-    })
-  },
   onPageScroll: function(e){
     if(e.scrollTop < 100){
       this.setData({

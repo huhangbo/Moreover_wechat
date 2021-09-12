@@ -1,0 +1,14 @@
+<view class="sticky" style="position: sticky; top: {{menuInfo.bottom}}px; background-color: #fff;">我的收藏</view>
+  <view class="collection" style="height:calc({{systemInfo.windowHeight-menuInfo.bottom}}px - 3rem)">
+      <view wx:for="{{collection}}" wx:key="id" class="collectionItem" bindtap="toCollectionItem" data-id="{{item.id}}">
+        <view class="postImg"><image class="postImage" src="{{item.thumbnailImage[0]}}"></image></view>
+        <view class="detail">
+          <view class="title">{{item.title}}</view>
+          <view class="location">地点：{{item.location}}</view>
+          <view class="likeComment">
+            <view class="like">点赞{{item.star}}</view>
+            <view class="comment">收藏{{item.collection}}</view>
+          </view>
+        </view>
+      </view>
+  </view>

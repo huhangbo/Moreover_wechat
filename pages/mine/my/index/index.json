@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "NavTop": "/Component/NavTop/NavTop",
-    "MineIndexInfo": "/Component/MineIndexInfo/MineIndexInfo"
+    "MineIndexInfo": "/Component/MineIndexInfo/MineIndexInfo",
+    "Collection": "/Component/Collection/Collection"
   },
   "navigationStyle": "custom"
 }

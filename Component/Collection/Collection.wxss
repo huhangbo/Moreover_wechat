@@ -1,0 +1,60 @@
+.sticky {
+  box-sizing: border-box;
+  border-top: solid 1px rgb(237,237,237);
+  border-bottom: solid 1px rgb(237,237,237);
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 0.5em;
+}
+
+.collection {
+  width: 100%;
+}
+
+.collectionItem {
+  background-color: #fff;
+  padding: 0.4em 2.5%;
+  display: flex;
+  flex-direction: row;
+  height: 6em;
+  border-bottom: solid rgb(237,237,237);
+}
+
+.postImg {
+  height: 96%;
+  margin: 1% 2%;
+  width: 25%;
+}
+
+.postImage{
+  border-radius: 10%;
+}
+
+.detail {
+  width: 70%;
+}
+
+.title {
+  font-size: large;
+  height: 1.5em;
+  margin-top: 0.5em;
+}
+
+.location {
+  font-size: small;
+  height: 2em;
+}
+
+.likeComment {
+  font-size: small;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.like, .comment {
+  padding: 0.5em 0.5em 0 0;
+  color: rgb(200, 200, 200);
+}
