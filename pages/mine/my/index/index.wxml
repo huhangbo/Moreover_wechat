@@ -1,33 +1,5 @@
 <NavTop opacity="{{navOpacity}}"/>
 <MineIndexInfo userInfo="{{userInfo}}" />
-  <!-- <view class="background">
-    <image src="{{userinfo.back}}"></image>
-  </view>
-  <view class="info">
-    <view class="avatar"><image src="{{userinfo.head}}"></image></view>
-    <view class="post">
-      <view class="box" bindtap="ToPost">
-        <view>{{userinfo.stars}}</view>
-        <view class="describe">获赞</view>
-      </view>
-      <view class="box" bindtap="ToFollow">
-        <view>{{userinfo.countOfFollow}}</view>
-        <view class="describe">关注</view>
-      </view>
-      <view class="box" bindtap="ToFollowers">
-        <view>{{userinfo.countOfFollowers}}</view>
-        <view class="describe">粉丝</view>
-      </view>
-    </view>
-    <view class="edit" bindtap="toedit"><text>编辑资料</text></view>
-  </view>
-  <view class="information">
-    <view class="nickname">{{userinfo.nickname}}</view>
-    <view class="sex">
-      <view class="sexdescribe">{{userinfo.sex}}</view><view class="sexicon"></view>
-    </view>
-    <view class="signature">{{description}}</view>
-  </view> -->
   <view class="sticky" style="position: sticky; top: {{menuInfo.bottom}}px; background-color: #fff;">我的收藏</view>
   <view class="collections" style="height:calc({{systemInfo.windowHeight-menuInfo.bottom}}px - 3rem)">
       <view wx:for="{{collection}}" wx:key="id" class="collection">
