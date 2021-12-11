@@ -1,6 +1,7 @@
 {
   "component": true,
     "usingComponents": {
-        "ClipImg": "../../../../Component/clip/clip"
+        "ClipImg": "/Component/clip/clip",
+        "EditIndo": "/Component/EditInfo/EditInfo"
     }
 }
